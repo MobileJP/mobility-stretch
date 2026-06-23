@@ -1,0 +1,44 @@
+.screen {
+  position: relative; z-index: 10; min-height: 100vh;
+  display: flex; justify-content: center; align-items: flex-start; padding-top: 80px;
+}
+.card {
+  max-width: 460px; width: calc(100% - 48px);
+  background: var(--cardBg);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255,255,255,0.6); border-radius: 26px;
+  box-shadow: 0 16px 50px rgba(100,60,40,0.18);
+  padding: 40px 34px; text-align: center;
+  animation: tideRise 0.4s ease both;
+}
+.icon { display: flex; justify-content: center; margin-bottom: 18px; }
+.title {
+  font-family: 'Playfair Display', serif; font-weight: 600; font-size: 28px;
+  letter-spacing: -0.4px; margin: 0 0 12px; color: var(--text);
+}
+.sub { font-size: 15px; line-height: 1.6; color: var(--muted); max-width: 340px; margin: 0 auto 26px; }
+.actions { display: flex; flex-direction: column; gap: 10px; }
+.row { display: flex; gap: 10px; }
+.btnPrimary {
+  width: 100%; padding: 15px; border-radius: 15px; border: none;
+  background: var(--accent); color: #fff; font-size: 16px; font-weight: 500; cursor: pointer;
+  box-shadow: 0 6px 20px rgba(196,126,90,0.32); transition: filter 0.15s;
+}
+.btnPrimary:hover { filter: brightness(1.06); }
+.btnGhost {
+  flex: 1; padding: 11px 22px; border-radius: 13px;
+  border: 1.5px solid rgba(255,255,255,0.7); background: rgba(255,255,255,0.65);
+  color: var(--text); font-size: 14px; font-weight: 500; cursor: pointer; transition: border-color 0.15s, color 0.15s;
+}
+.btnGhost:hover { border-color: var(--accent); color: var(--accent); }
+.btnGhostMuted {
+  flex: 1; padding: 11px 22px; border-radius: 13px;
+  border: 1.5px solid rgba(255,255,255,0.7); background: rgba(255,255,255,0.65);
+  color: var(--muted); font-size: 14px; font-weight: 500; cursor: pointer; transition: color 0.15s;
+}
+.btnGhostMuted:hover { color: var(--text); }
+.btnLink {
+  background: none; border: none; color: var(--muted); font-size: 13.5px; cursor: pointer;
+  text-decoration: underline; text-underline-offset: 3px; margin-top: 4px; transition: color 0.15s;
+}
+.btnLink:hover { color: var(--accent); }

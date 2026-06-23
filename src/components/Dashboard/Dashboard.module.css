@@ -1,0 +1,257 @@
+.shell { position: relative; z-index: 10; min-height: 100vh; }
+
+/* ── Header ── */
+.header {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; gap: 14px;
+  height: 64px; padding: 0 24px;
+  background: var(--headerBg);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+.brand {
+  display: flex; align-items: center; gap: 10px;
+  background: none; border: none; cursor: pointer; padding: 0; color: var(--text);
+}
+.brandName {
+  font-family: 'Playfair Display', serif;
+  font-size: 21px; font-weight: 600; letter-spacing: -0.3px; line-height: 1; display: block;
+}
+.brandSub {
+  font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--muted); margin-top: 3px; display: block;
+}
+.headerRight { margin-left: auto; display: flex; align-items: center; gap: 10px; }
+
+/* Today indicators */
+.todayDots { display: flex; gap: 5px; }
+.todayDot {
+  width: 26px; height: 26px; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0;
+  background: rgba(255,255,255,0.35); border: 1.5px solid rgba(255,255,255,0.5);
+  color: var(--muted); transition: all 0.2s;
+}
+.todayDotDone {
+  background: var(--accentSoft); border-color: var(--accent); color: var(--accent);
+}
+.todayDotStrDone {
+  background: rgba(74,143,181,0.15); border-color: #4a8fb5; color: #4a8fb5;
+}
+
+/* Streak badge inside weekBadge */
+.streakBadge {
+  margin-left: 4px; padding: 1px 7px; border-radius: 8px;
+  background: rgba(196,126,90,0.15); color: var(--accent);
+  font-size: 11px; font-weight: 600; white-space: nowrap;
+}
+
+.weekBadge {
+  display: flex; align-items: center; gap: 7px; padding: 6px 13px; border-radius: 20px;
+  background: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.6);
+  font-size: 12.5px; font-weight: 500; color: var(--text);
+}
+
+/* Nudge banner */
+.nudgeBanner {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 13px 18px; border-radius: 16px;
+  background: var(--accentSoft); border: 1.5px solid var(--accent);
+  color: var(--accent);
+}
+.nudgeBannerStr {
+  background: rgba(74,143,181,0.10); border-color: #4a8fb5; color: #4a8fb5;
+}
+.nudgeMsg   { flex: 1; font-size: 13.5px; font-weight: 500; min-width: 140px; }
+.nudgeAccept {
+  padding: 7px 16px; border-radius: 10px; cursor: pointer;
+  background: var(--accent); border: none; color: #fff;
+  font-size: 13px; font-weight: 600; white-space: nowrap; transition: filter 0.15s;
+}
+.nudgeBannerStr .nudgeAccept { background: #4a8fb5; }
+.nudgeAccept:hover { filter: brightness(1.08); }
+.nudgeDismiss {
+  background: none; border: none; cursor: pointer;
+  font-size: 20px; line-height: 1; padding: 0 4px; opacity: 0.55; transition: opacity 0.15s;
+  color: currentColor;
+}
+.nudgeDismiss:hover { opacity: 1; }
+.iconBtn {
+  width: 38px; height: 38px; border-radius: 11px;
+  border: 1px solid rgba(255,255,255,0.6); background: rgba(255,255,255,0.6);
+  color: var(--muted); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: color 0.15s, background 0.15s;
+}
+.iconBtn:hover { color: var(--accent); background: #fff; }
+.userBtn {
+  display: flex; align-items: center; gap: 8px; padding: 6px 12px; border-radius: 20px;
+  background: rgba(255,255,255,0.6); border: 1px solid rgba(255,255,255,0.6);
+  font-size: 12.5px; font-weight: 500; color: var(--muted); cursor: pointer; transition: color 0.15s;
+}
+.userBtn:hover { color: var(--text); }
+.uidBadge {
+  font-size: 10px; font-family: ui-monospace, 'SF Mono', monospace;
+  color: var(--muted); background: rgba(255,255,255,0.5);
+  border: 1px solid rgba(255,255,255,0.6); border-radius: 8px;
+  padding: 4px 8px; cursor: pointer; white-space: nowrap;
+  transition: color 0.15s;
+}
+.uidBadge:hover { color: var(--accent); }
+
+/* ── Main ── */
+.main {
+  position: relative; z-index: 10;
+  max-width: 860px; margin: 0 auto; padding: 40px 24px 72px;
+  display: flex; flex-direction: column; gap: 32px;
+}
+
+/* ── Card ── */
+.card {
+  background: var(--cardBg);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255,255,255,0.6);
+  border-radius: 24px; box-shadow: 0 10px 40px rgba(100,60,40,0.12);
+  padding: 38px 32px; text-align: center;
+}
+
+/* ── Typography ── */
+.eyebrow {
+  font-size: 12px; font-weight: 500; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--muted);
+}
+.h2 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 600; font-size: 27px; margin: 12px 0 6px; letter-spacing: -0.4px;
+}
+.h3 {
+  font-family: 'Playfair Display', serif; font-weight: 600; font-size: 20px; margin: 0;
+}
+.subcopy { font-size: 15px; line-height: 1.55; color: var(--muted); }
+
+/* ── Timer states ── */
+.timerIdle, .timerRunning, .timerPaused {
+  display: flex; flex-direction: column; align-items: center;
+}
+
+/* ── Ring ── */
+.ringWrap {
+  position: relative; width: 200px; height: 200px;
+  display: flex; align-items: center; justify-content: center; margin: 6px auto 8px;
+}
+.ringSvg {
+  position: absolute; inset: 0; width: 200px; height: 200px; transform: rotate(-90deg);
+}
+.ringTextMd {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px; font-weight: 500; letter-spacing: -1px; text-align: center;
+}
+
+/* ── Buttons ── */
+.pillRow { display: flex; justify-content: center; gap: 10px; margin-bottom: 26px; }
+.pill {
+  padding: 11px 22px; border-radius: 14px; cursor: pointer;
+  font-size: 15px; font-weight: 500; transition: all 0.15s;
+}
+.pillSm { padding: 9px 18px; font-size: 13.5px; }
+.pillActive   { border: 1.5px solid var(--accent); background: var(--accentSoft); color: var(--accent); }
+.pillInactive { border: 1.5px solid rgba(255,255,255,0.7); background: rgba(255,255,255,0.55); color: var(--muted); }
+.pillInactive:hover { color: var(--text); }
+
+.btnRow { display: flex; gap: 10px; justify-content: center; align-items: center; }
+.btnPrimary {
+  padding: 15px 40px; border-radius: 15px; border: none;
+  background: var(--accent); color: #fff; font-size: 16px; font-weight: 500; cursor: pointer;
+  box-shadow: 0 6px 20px rgba(196,126,90,0.32); transition: filter 0.15s;
+}
+.btnPrimary:hover { filter: brightness(1.06); }
+.btnPrimarySm {
+  padding: 13px 24px; border-radius: 14px; border: none;
+  background: var(--accent); color: #fff; font-size: 14.5px; font-weight: 500; cursor: pointer;
+  transition: filter 0.15s;
+}
+.btnPrimarySm:hover { filter: brightness(1.06); }
+.btnGhostMuted {
+  padding: 11px 22px; border-radius: 13px;
+  border: 1.5px solid rgba(255,255,255,0.7); background: rgba(255,255,255,0.65);
+  color: var(--muted); font-size: 14px; font-weight: 500; cursor: pointer; transition: color 0.15s;
+}
+.btnGhostMuted:hover { color: var(--text); }
+.btnLink {
+  background: none; border: none; color: var(--muted); font-size: 13.5px; cursor: pointer;
+  text-decoration: underline; text-underline-offset: 3px; transition: color 0.15s;
+}
+.btnLink:hover { color: var(--accent); }
+
+/* ── Routines ── */
+.routinesHeader {
+  display: flex; align-items: baseline; justify-content: space-between; margin: 0 4px 10px;
+}
+.diffRow {
+  display: flex; align-items: center; gap: 10px; margin: 0 0 16px; flex-wrap: wrap;
+}
+.diffLabel { font-size: 12.5px; font-weight: 500; color: var(--muted); white-space: nowrap; margin-right: 2px; }
+
+.zoneGrid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;
+}
+.zoneCard {
+  display: flex; flex-direction: column; align-items: flex-start;
+  gap: 9px; text-align: left; padding: 20px; border-radius: 20px;
+  background: var(--cardBg);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255,255,255,0.6); box-shadow: 0 6px 22px rgba(100,60,40,0.10);
+  cursor: pointer; transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+.zoneCard:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(100,60,40,0.18); }
+.zoneName { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; color: var(--text); }
+.zoneTag  { font-size: 12.5px; color: var(--muted); }
+.zoneMeta { font-size: 12px; color: var(--accent); font-weight: 500; margin-top: 2px; }
+
+.dashedGrid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; margin-top: 14px;
+}
+.dashedTile {
+  display: flex; align-items: center; gap: 13px; text-align: left; padding: 18px 20px; border-radius: 20px;
+  background: rgba(255,255,255,0.4); border: 1.5px dashed rgba(255,255,255,0.85);
+  cursor: pointer; transition: background 0.18s ease;
+}
+.dashedTile:hover { background: rgba(255,255,255,0.62); }
+.dashedTitle { font-weight: 600; font-size: 15px; color: var(--text); }
+.dashedSub   { font-size: 12.5px; color: var(--muted); }
+
+/* ── Strength section ── */
+.strengthPill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 14px; border-radius: 20px; cursor: pointer;
+  background: rgba(255,255,255,0.6); border: 1.5px solid rgba(255,255,255,0.7);
+  font-size: 13px; font-weight: 500; color: var(--accent); transition: background 0.15s;
+}
+.strengthPill:hover { background: #fff; }
+.strengthLastSession {
+  display: flex; align-items: center; gap: 8px;
+  margin-bottom: 12px; font-size: 13px; color: var(--muted);
+}
+.strengthLastLabel { color: var(--muted); }
+.strengthLastZone  { font-weight: 600; color: var(--text); }
+.strengthLastDiff  {
+  padding: 2px 8px; border-radius: 10px;
+  background: var(--accentSoft); color: var(--accent); font-size: 11.5px; font-weight: 500;
+}
+.btnStrengthStart {
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 14px 28px; border-radius: 15px; border: none;
+  background: var(--accent); color: #fff; font-size: 15px; font-weight: 500; cursor: pointer;
+  box-shadow: 0 6px 20px rgba(196,126,90,0.28); transition: filter 0.15s;
+}
+.btnStrengthStart:hover { filter: brightness(1.06); }
+
+@media (max-width: 640px) {
+  .main     { padding: 24px 16px 60px; }
+  .header   { padding: 0 16px; }
+  .weekBadge { display: none; }
+  .zoneGrid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 440px) {
+  .zoneGrid { grid-template-columns: 1fr; }
+}

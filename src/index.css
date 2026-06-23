@@ -1,0 +1,37 @@
+/* ════════════════════════════════════════
+   TOKENS — Coastal Dusk
+════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --accent:    #c47e5a;
+  --accentSoft:#f4e6da;
+  --text:      #2c2530;
+  --muted:     #7a6a72;
+  --cardBg:    rgba(255,255,255,0.84);
+  --headerBg:  rgba(244,224,212,0.82);
+}
+
+/* ════════════════════════════════════════
+   ANIMATIONS
+════════════════════════════════════════ */
+@keyframes tideFade    { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
+@keyframes tideRise    { from { opacity:0; transform:scale(0.96);      } to { opacity:1; transform:scale(1); } }
+@keyframes tideBreathe { 0%,100% { transform:scale(1); } 50% { transform:scale(1.04); } }
+
+/* ════════════════════════════════════════
+   RESET & BASE
+════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { height: 100%; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  overflow-x: hidden;
+}
+button { font-family: 'DM Sans', sans-serif; }
+::selection { background: rgba(196,126,90,0.18); }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb { background: rgba(196,126,90,0.3); border-radius: 8px; }
+
+#root { min-height: 100vh; }

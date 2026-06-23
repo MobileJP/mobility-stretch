@@ -1,0 +1,107 @@
+.shell { position: relative; z-index: 10; min-height: 100vh; }
+
+.header {
+  position: sticky; top: 0; z-index: 20;
+  display: flex; align-items: center; justify-content: space-between;
+  height: 64px; padding: 0 24px;
+  background: var(--headerBg);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+.backBtn {
+  display: flex; align-items: center; gap: 5px;
+  background: none; border: none; color: var(--muted); font-size: 14px; font-weight: 500;
+  cursor: pointer; transition: color 0.15s; padding: 0; width: 80px;
+}
+.backBtn:hover { color: var(--accent); }
+.title {
+  font-family: 'Playfair Display', serif; font-weight: 600; font-size: 20px;
+  letter-spacing: -0.3px; color: var(--text); margin: 0;
+}
+
+.main {
+  max-width: 860px; margin: 0 auto; padding: 32px 24px 72px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+
+/* ── Progression nudge ── */
+.nudgeBanner {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 14px 18px; border-radius: 16px;
+  background: var(--accentSoft); border: 1.5px solid var(--accent);
+  color: var(--accent);
+}
+.nudgeMsg   { flex: 1; font-size: 13.5px; font-weight: 500; min-width: 160px; }
+.nudgeAccept {
+  padding: 7px 16px; border-radius: 10px; cursor: pointer;
+  background: var(--accent); border: none; color: #fff;
+  font-size: 13px; font-weight: 600; transition: filter 0.15s; white-space: nowrap;
+}
+.nudgeAccept:hover { filter: brightness(1.08); }
+.nudgeDismiss {
+  background: none; border: none; color: var(--accent); cursor: pointer;
+  font-size: 20px; line-height: 1; padding: 0 4px; opacity: 0.6; transition: opacity 0.15s;
+}
+.nudgeDismiss:hover { opacity: 1; }
+
+.diffSection {}
+.diffLabel {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 10px;
+}
+.diffRow { display: flex; gap: 10px; }
+.pill {
+  flex: 1; max-width: 130px; padding: 10px; border-radius: 13px;
+  font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer;
+  transition: all 0.15s;
+}
+.pillActive   { border: 1.5px solid var(--accent); background: var(--accentSoft); color: var(--accent); }
+.pillInactive { border: 1.5px solid rgba(255,255,255,0.7); background: rgba(255,255,255,0.55); color: var(--muted); }
+.pillInactive:hover { color: var(--text); }
+
+.fullBodyTile {
+  display: flex; align-items: center; gap: 16px; text-align: left;
+  padding: 20px 24px; border-radius: 22px;
+  background: var(--cardBg);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255,255,255,0.6);
+  box-shadow: 0 8px 28px rgba(100,60,40,0.12);
+  cursor: pointer; transition: transform 0.18s, box-shadow 0.18s;
+  width: 100%;
+}
+.fullBodyTile:hover { transform: translateY(-2px); box-shadow: 0 14px 36px rgba(100,60,40,0.18); }
+.fullBodyIcon { font-size: 34px; line-height: 1; }
+.fullBodyTitle { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 600; color: var(--text); }
+.fullBodySub   { font-size: 13px; color: var(--muted); margin-top: 3px; }
+
+.zoneGrid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px;
+}
+.zoneCard {
+  display: flex; flex-direction: column; gap: 8px; text-align: left;
+  padding: 20px; border-radius: 20px;
+  background: var(--cardBg);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255,255,255,0.6); box-shadow: 0 6px 22px rgba(100,60,40,0.10);
+  cursor: pointer; transition: transform 0.18s, box-shadow 0.18s;
+}
+.zoneCard:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(100,60,40,0.18); }
+.zoneTop { display: flex; align-items: center; justify-content: space-between; }
+.zoneName { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 600; }
+.zoneGoal {
+  font-size: 12.5px; line-height: 1.5; color: var(--muted); margin: 0;
+  display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;
+}
+.zoneFoot { display: flex; align-items: center; justify-content: space-between; gap: 8px; flex-wrap: wrap; margin-top: 2px; }
+.zoneMeta  { font-size: 11.5px; color: var(--accent); font-weight: 500; }
+.zoneEquip { font-size: 11.5px; color: var(--muted); }
+
+@media (max-width: 640px) {
+  .main     { padding: 20px 16px 60px; }
+  .header   { padding: 0 16px; }
+  .zoneGrid { grid-template-columns: 1fr 1fr; }
+  .diffRow  { gap: 8px; }
+}
+@media (max-width: 440px) {
+  .zoneGrid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,53 @@
+.shell {
+  position: relative; z-index: 10; min-height: 100vh;
+  display: flex; flex-direction: column; align-items: center;
+  padding: 32px 24px 60px;
+}
+.topbar {
+  width: 100%; max-width: 520px;
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px;
+}
+.topbarLeft { display: flex; align-items: center; gap: 9px; }
+.zonePill {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 5px 12px; border-radius: 20px;
+  background: rgba(255,255,255,0.6);
+  font-size: 12.5px; font-weight: 500;
+}
+.stepLabel { font-size: 12.5px; color: var(--muted); }
+.btnEnd {
+  background: none; border: none; color: var(--muted); font-size: 13.5px; cursor: pointer;
+  text-decoration: underline; text-underline-offset: 3px; transition: color 0.15s;
+}
+.btnEnd:hover { color: var(--accent); }
+
+.card {
+  width: 100%; max-width: 520px;
+  background: var(--cardBg);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255,255,255,0.6); border-radius: 26px;
+  box-shadow: 0 14px 44px rgba(100,60,40,0.16);
+  padding: 30px 32px 28px;
+  animation: tideFade 0.45s ease both;
+}
+
+.dotRow {
+  display: flex; justify-content: center; align-items: center; gap: 8px;
+  margin: 16px 0;
+}
+.dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; transition: all 0.2s; }
+.dotDone    { background: var(--accent); opacity: 0.5; }
+.dotActive  { background: var(--accent); width: 10px; height: 10px; }
+.dotPending { background: rgba(196,126,90,0.25); }
+
+.navRow {
+  display: flex; justify-content: center; gap: 14px;
+}
+.btnCircle {
+  width: 50px; height: 50px; border-radius: 14px;
+  border: 1.5px solid rgba(255,255,255,0.7); background: rgba(255,255,255,0.6);
+  color: var(--text); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: border-color 0.15s, color 0.15s;
+}
+.btnCircle:hover { border-color: var(--accent); color: var(--accent); }

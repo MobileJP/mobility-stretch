@@ -1,0 +1,27 @@
+.card { text-align: center; }
+.name {
+  font-family: 'Playfair Display', serif; font-weight: 600; font-size: 23px;
+  margin: 0 0 4px; letter-spacing: -0.3px; color: var(--text);
+}
+.target { font-size: 12px; color: var(--muted); margin: 0 0 16px; font-style: italic; }
+.movementSection { padding: 20px 0 12px; }
+.movementIcon { font-size: 52px; line-height: 1; }
+.repCounter { font-size: 18px; font-weight: 500; color: var(--text); margin-top: 10px; }
+.instruction {
+  font-size: 15px; line-height: 1.6; color: var(--text);
+  margin: 14px auto 10px; max-width: 400px;
+}
+.notes {
+  background: rgba(255,255,255,0.25); border-radius: 10px;
+  padding: 10px 14px; font-size: 13px; color: var(--muted);
+  text-align: left; margin-bottom: 16px; line-height: 1.55;
+}
+.movementControls { margin-top: 8px; }
+.repDoneBtn {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 0 34px; height: 50px; border-radius: 14px;
+  border: none; background: var(--accent); color: #fff;
+  font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500; cursor: pointer;
+  transition: filter 0.15s;
+}
+.repDoneBtn:hover { filter: brightness(1.06); }

@@ -1,0 +1,181 @@
+.shell { position: relative; z-index: 10; min-height: 100vh; }
+
+/* ── Header ── */
+.header {
+  position: sticky; top: 0; z-index: 20;
+  padding: 16px 24px 12px;
+  background: var(--headerBg);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255,255,255,0.4);
+}
+.backBtn {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: none; border: none; cursor: pointer;
+  color: var(--muted); font-size: 13.5px; font-weight: 500;
+  padding: 0; margin-bottom: 10px; transition: color 0.15s;
+}
+.backBtn:hover { color: var(--accent); }
+.title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px; font-weight: 600; letter-spacing: -0.3px;
+  color: var(--text); margin: 0 0 12px;
+}
+.filterRow { display: flex; gap: 8px; }
+.filterPill {
+  padding: 7px 16px; border-radius: 20px; cursor: pointer;
+  border: 1.5px solid rgba(255,255,255,0.7); background: rgba(255,255,255,0.55);
+  font-size: 13px; font-weight: 500; color: var(--muted); transition: all 0.15s;
+}
+.filterPill:hover  { color: var(--text); }
+.filterActive {
+  border-color: var(--accent); background: var(--accentSoft); color: var(--accent);
+}
+
+/* ── Main ── */
+.main {
+  max-width: 860px; margin: 0 auto; padding: 32px 24px 72px;
+  display: flex; flex-direction: column; gap: 28px;
+}
+
+/* ── Stats row ── */
+.statsRow {
+  display: flex; gap: 12px; flex-wrap: wrap;
+}
+.statCard {
+  flex: 1; min-width: 90px;
+  background: var(--cardBg);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255,255,255,0.6); border-radius: 18px;
+  padding: 18px 14px; text-align: center;
+}
+.statVal {
+  font-family: 'Playfair Display', serif;
+  font-size: 30px; font-weight: 600; color: var(--accent); line-height: 1;
+}
+.statLabel {
+  font-size: 11px; font-weight: 500; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--muted); margin-top: 5px;
+}
+
+/* ── Section ── */
+.section {
+  background: var(--cardBg);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255,255,255,0.6); border-radius: 22px;
+  padding: 24px 24px 22px;
+}
+.sectionTitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 17px; font-weight: 600; color: var(--text);
+  margin: 0 0 18px; display: flex; align-items: center; gap: 10px;
+}
+.sectionCount {
+  font-size: 12px; font-weight: 500; font-family: 'DM Sans', sans-serif;
+  background: var(--accentSoft); color: var(--accent);
+  padding: 2px 8px; border-radius: 10px;
+}
+
+/* ── Calendar ── */
+.calendarWrap { }
+.dayLabelRow {
+  display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px;
+  margin-bottom: 4px;
+}
+.dayLabel {
+  text-align: center; font-size: 10.5px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted);
+}
+.calGrid {
+  display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px;
+}
+.calCell {
+  display: flex; justify-content: center; align-items: center;
+  aspect-ratio: 1;
+}
+.calDot {
+  width: 100%; max-width: 38px; aspect-ratio: 1;
+  border-radius: 8px; background: rgba(255,255,255,0.25);
+  transition: transform 0.1s;
+}
+.calDotActive { box-shadow: 0 2px 8px rgba(100,60,40,0.18); }
+.calDot:hover { transform: scale(1.12); cursor: default; }
+
+.calLegend {
+  display: flex; align-items: center; gap: 8px; margin-top: 12px;
+  font-size: 12px; color: var(--muted);
+}
+.legendDot {
+  display: inline-block; width: 10px; height: 10px; border-radius: 3px;
+}
+.legendLabel { margin-right: 10px; }
+
+/* ── Neglected zones ── */
+.neglectedList { display: flex; flex-direction: column; gap: 10px; }
+.neglectedItem {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px 14px; border-radius: 12px;
+  background: rgba(255,255,255,0.45); border: 1px solid rgba(255,255,255,0.6);
+}
+.neglectedDot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+.neglectedZone { flex: 1; font-size: 14px; font-weight: 500; color: var(--text); }
+.neglectedAge {
+  font-size: 12px; color: var(--muted);
+  background: rgba(196,126,90,0.10); color: var(--accent);
+  padding: 2px 9px; border-radius: 10px; font-weight: 500;
+}
+
+/* ── Zone chart ── */
+.zoneChart { display: flex; flex-direction: column; gap: 10px; }
+.zoneRow { display: flex; align-items: center; gap: 12px; }
+.zoneRowName {
+  width: 148px; flex-shrink: 0;
+  font-size: 13px; font-weight: 500; color: var(--text); text-align: right;
+}
+.zoneBarTrack {
+  flex: 1; height: 14px; border-radius: 7px;
+  background: rgba(255,255,255,0.3);
+  display: flex; overflow: hidden;
+}
+.zoneBarMob { height: 100%; border-radius: 7px 0 0 7px; min-width: 2px; transition: width 0.4s ease; }
+.zoneBarStr { height: 100%; border-radius: 0 7px 7px 0; min-width: 2px; transition: width 0.4s ease; }
+.zoneCount {
+  width: 22px; flex-shrink: 0;
+  font-size: 12px; font-weight: 600; color: var(--muted); text-align: right;
+}
+
+/* ── Session list ── */
+.empty { font-size: 14px; color: var(--muted); text-align: center; padding: 16px 0; }
+.sessionList { display: flex; flex-direction: column; gap: 0; }
+.sessionRow {
+  display: flex; align-items: center; gap: 12px; padding: 11px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.4); font-size: 13.5px;
+}
+.sessionRow:last-child { border-bottom: none; }
+.sessionDate {
+  width: 70px; flex-shrink: 0; font-size: 12.5px; color: var(--muted); font-weight: 500;
+}
+.typeBadge {
+  padding: 3px 9px; border-radius: 10px; font-size: 11.5px; font-weight: 600;
+  flex-shrink: 0;
+}
+.typeBadgeMob { background: var(--accentSoft); color: var(--accent); }
+.typeBadgeStr { background: rgba(74,143,181,0.15); color: #4a8fb5; }
+.sessionZone { flex: 1; color: var(--text); font-weight: 500; }
+.sessionDiff { font-size: 12px; color: var(--muted); flex-shrink: 0; min-width: 65px; }
+.sessionDur  { font-size: 12px; color: var(--muted); flex-shrink: 0; text-align: right; min-width: 32px; }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .header   { padding: 14px 16px 10px; }
+  .main     { padding: 20px 14px 60px; gap: 20px; }
+  .statsRow { gap: 8px; }
+  .statCard { padding: 14px 10px; }
+  .statVal  { font-size: 24px; }
+  .section  { padding: 18px 16px; }
+  .zoneRowName { width: 110px; font-size: 12px; }
+  .sessionDiff { display: none; }
+}
+@media (max-width: 420px) {
+  .statsRow    { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+  .zoneRowName { width: 80px; font-size: 11px; }
+}

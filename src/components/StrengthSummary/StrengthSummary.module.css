@@ -1,0 +1,72 @@
+.screen {
+  position: relative; z-index: 10; min-height: 100vh;
+  display: flex; justify-content: center; padding: 32px 24px 60px;
+}
+.card {
+  max-width: 480px; width: 100%;
+  background: var(--cardBg);
+  backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+  border: 1.5px solid rgba(255,255,255,0.6); border-radius: 26px;
+  box-shadow: 0 14px 50px rgba(100,60,40,0.16);
+  padding: 38px 34px; text-align: center;
+  animation: tideRise 0.4s ease both;
+}
+.checkIcon { display: flex; justify-content: center; margin-bottom: 14px; }
+.title {
+  font-family: 'Playfair Display', serif; font-weight: 600; font-size: 27px;
+  letter-spacing: -0.4px; margin: 0 0 6px; color: var(--text);
+}
+.sub { font-size: 14px; color: var(--muted); margin: 0 0 22px; }
+.diffBadge { color: var(--accent); font-weight: 600; }
+
+.statTiles { display: flex; gap: 12px; margin-bottom: 22px; }
+.statTile {
+  flex: 1; background: rgba(255,255,255,0.5); border-radius: 16px; padding: 14px 8px; text-align: center;
+}
+.statVal    { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 600; color: var(--accent); }
+.statOf     { font-size: 14px; font-weight: 400; color: var(--muted); }
+.statLabel  { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+
+.effortSection { margin-bottom: 14px; text-align: left; }
+.effortLabel {
+  font-size: 12px; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase; color: var(--muted); margin-bottom: 8px;
+}
+.effortRow { display: flex; gap: 8px; }
+.effortBtn {
+  flex: 1; padding: 10px; border-radius: 12px; cursor: pointer;
+  font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500;
+  border: 1.5px solid rgba(255,255,255,0.7); background: rgba(255,255,255,0.55); color: var(--muted);
+  transition: all 0.15s;
+}
+.effortBtn:hover { border-color: var(--accent); color: var(--accent); }
+.effortActive { border-color: var(--accent) !important; background: var(--accentSoft) !important; color: var(--accent) !important; }
+
+.notes {
+  width: 100%; border-radius: 12px; border: 1.5px solid rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.55); padding: 10px 12px;
+  font-family: 'DM Sans', sans-serif; font-size: 14px; color: var(--text);
+  resize: none; margin-bottom: 18px; box-sizing: border-box;
+}
+.notes::placeholder { color: var(--muted); }
+.notes:focus { outline: none; border-color: var(--accent); }
+
+.actions { display: flex; gap: 10px; margin-bottom: 14px; }
+.btnGhost {
+  flex: 1; padding: 13px 22px; border-radius: 13px;
+  border: 1.5px solid rgba(255,255,255,0.7); background: rgba(255,255,255,0.65);
+  color: var(--text); font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+.btnGhost:hover { border-color: var(--accent); color: var(--accent); }
+
+.saveBtn {
+  width: 100%; padding: 12px; border-radius: 12px;
+  border: 1.5px solid var(--accent); background: transparent;
+  color: var(--accent); font-family: 'DM Sans', sans-serif; font-size: 14px; font-weight: 500; cursor: pointer;
+  transition: background 0.15s;
+}
+.saveBtn:hover { background: var(--accentSoft); }
+.saveStatus { font-size: 12px; margin-top: 8px; color: var(--muted); }
+.saved      { color: #2f9c93; }
+.saveErr    { color: #c05555; }

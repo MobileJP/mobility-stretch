@@ -1,0 +1,23 @@
+.wrap { display: flex; flex-direction: column; align-items: center; padding: 8px 0; }
+.eyebrow {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 8px;
+}
+.ringWrap {
+  position: relative; width: 180px; height: 180px;
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 12px;
+}
+.ringSvg { position: absolute; inset: 0; width: 180px; height: 180px; transform: rotate(-90deg); }
+.ringNum {
+  font-family: 'Playfair Display', serif;
+  font-size: 46px; font-weight: 500; line-height: 1; letter-spacing: -1px; text-align: center;
+}
+.ringSub {
+  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-top: 3px;
+}
+.nextLabel { font-size: 13.5px; color: var(--muted); margin-bottom: 14px; }
+.skipBtn {
+  background: none; border: none; color: var(--accent); font-size: 14px; font-weight: 500;
+  cursor: pointer; text-decoration: underline; text-underline-offset: 3px; transition: opacity 0.15s;
+}
+.skipBtn:hover { opacity: 0.75; }
